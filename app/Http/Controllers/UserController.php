@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
@@ -89,11 +88,6 @@ class UserController extends Controller
             ], 401);
 
         }
-
-        return response()->json([
-            'message' => 'Welcome to the dashboard',
-            'user' => $user,
-        ], 200);
     }
 
     public function logout(Request $request) {
